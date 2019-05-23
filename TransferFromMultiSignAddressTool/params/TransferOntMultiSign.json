@@ -1,0 +1,5 @@
+{
+  "Path1": ["wallets/path1/wallet.dat"],
+  "Path2": ["wallets/path2/wallet.dat"],
+  "Amount": [10000000]
+}
