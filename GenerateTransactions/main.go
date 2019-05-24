@@ -6,7 +6,6 @@ import (
 	goSdk "github.com/ontio/ontology-go-sdk"
 	"github.com/ontio/ontology/common"
 	"github.com/ontio/ontology/common/log"
-	// "github.com/ontio/ontology/core/types"
 	"os"
 	"strconv"
 )
@@ -33,8 +32,13 @@ func main() {
 		fmt.Println("get account err:", err)
 	}
 
-	txNum, _ := strconv.Atoi(os.Args[1])
-	txNum = txNum * 100000
+	txNum, err := strconv.Atoi(os.Args[1])
+	if err != nil {
+		txNum = txNum * 1000
+	} else {
+		txNum = 1000
+	}
+
 	if txNum > 2<<32 {
 		txNum = 2 << 32
 	}
