@@ -1,0 +1,92 @@
+-------------------------------------------------
+ nench.sh v2019.03.01 -- https://git.io/nench.sh
+ benchmark timestamp:    2019-05-17 10:12:14 UTC
+-------------------------------------------------
+
+chmod: cannot access ‘ioping.static’: No such file or directory
+Processor:    Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.80GHz
+CPU cores:    40
+Frequency:    1200.219 MHz
+RAM:          62G
+Swap:         31G
+Kernel:       Linux 3.10.0-957.12.2.el7.x86_64 x86_64
+
+Disks:
+sda    477G  SSD
+
+CPU: SHA256-hashing 500 MB
+    2.040 seconds
+CPU: bzip2-compressing 500 MB
+    5.615 seconds
+CPU: AES-encrypting 500 MB
+    1.622 seconds
+
+ioping: seek rate
+    bash: line 220: ./ioping.static: No such file or directory
+ioping: sequential read speed
+    bash: line 222: ./ioping.static: No such file or directory
+
+dd: sequential write speed
+    1st run:    421.52 MiB/s
+    2nd run:    370.03 MiB/s
+    3rd run:    362.40 MiB/s
+    average:    384.65 MiB/s
+
+IPv4 speedtests
+    your IPv4:    116.230.86.xxxx
+
+    Cachefly CDN:         0.18 MiB/s
+    Leaseweb (NL):        0.07 MiB/s
+    Softlayer DAL (US):   0.04 MiB/s
+    Online.net (FR):      0.00 MiB/s
+    OVH BHS (CA):         0.01 MiB/s
+
+No IPv6 connectivity detected
+-------------------------------------------------
+
+-------------------------------------------------
+ nench.sh v2019.03.01 -- https://git.io/nench.sh
+ benchmark timestamp:    2019-05-17 10:13:39 UTC
+-------------------------------------------------
+
+chmod: cannot access ‘ioping.static’: No such file or directory
+Processor:    Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.80GHz
+CPU cores:    40
+Frequency:    1200.048 MHz
+RAM:          62G
+Swap:         31G
+Kernel:       Linux 3.10.0-957.12.2.el7.x86_64 x86_64
+
+Disks:
+sda    477G  SSD
+
+CPU: SHA256-hashing 500 MB
+    2.054 seconds
+CPU: bzip2-compressing 500 MB
+    5.618 seconds
+CPU: AES-encrypting 500 MB
+    1.615 seconds
+
+ioping: seek rate
+    bash: line 220: ./ioping.static: No such file or directory
+ioping: sequential read speed
+    bash: line 222: ./ioping.static: No such file or directory
+
+dd: sequential write speed
+    1st run:    370.98 MiB/s
+    2nd run:    370.03 MiB/s
+    3rd run:    369.07 MiB/s
+    average:    370.03 MiB/s
+
+IPv4 speedtests
+    your IPv4:    116.230.86.xxxx
+
+    Cachefly CDN:         0.11 MiB/s
+    Leaseweb (NL):        0.10 MiB/s
+    Softlayer DAL (US):   0.04 MiB/s
+    Online.net (FR):      0.00 MiB/s
+    OVH BHS (CA):         0.00 MiB/s
+
+No IPv6 connectivity detected
+-------------------------------------------------
+

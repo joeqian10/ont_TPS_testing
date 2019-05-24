@@ -1,0 +1,89 @@
+-------------------------------------------------
+ nench.sh v2019.03.01 -- https://git.io/nench.sh
+ benchmark timestamp:    2019-05-17 10:11:27 UTC
+-------------------------------------------------
+
+chmod: cannot access ‘ioping.static’: No such file or directory
+Processor:    Intel(R) Xeon(R) CPU E5-2430 0 @ 2.20GHz
+CPU cores:    12
+Frequency:    1239.916 MHz
+RAM:          7.6G
+Swap:         7.7G
+Kernel:       Linux 3.10.0-957.12.1.el7.x86_64 x86_64
+
+Disks:
+sda  111.8G  SSD
+
+CPU: SHA256-hashing 500 MB
+    2.539 seconds
+CPU: bzip2-compressing 500 MB
+    6.544 seconds
+CPU: AES-encrypting 500 MB
+    1.802 seconds
+
+ioping: seek rate
+    bash: line 220: ./ioping.static: No such file or directory
+ioping: sequential read speed
+    bash: line 222: ./ioping.static: No such file or directory
+
+dd: sequential write speed
+    1st run:    173.57 MiB/s
+    2nd run:    168.80 MiB/s
+    3rd run:    168.80 MiB/s
+    average:    170.39 MiB/s
+
+IPv4 speedtests
+    your IPv4:    116.230.86.xxxx
+
+    Cachefly CDN:         0.15 MiB/s
+    Leaseweb (NL):        0.40 MiB/s
+    Softlayer DAL (US):   0.02 MiB/s
+    Online.net (FR):      0.00 MiB/s
+    OVH BHS (CA):         0.02 MiB/s
+
+No IPv6 connectivity detected
+-------------------------------------------------
+
+-------------------------------------------------
+ nench.sh v2019.03.01 -- https://git.io/nench.sh
+ benchmark timestamp:    2019-05-17 10:13:10 UTC
+-------------------------------------------------
+
+Processor:    Intel(R) Xeon(R) CPU E5-2430 0 @ 2.20GHz
+CPU cores:    12
+Frequency:    1200.573 MHz
+RAM:          7.6G
+Swap:         7.7G
+Kernel:       Linux 3.10.0-957.12.1.el7.x86_64 x86_64
+
+Disks:
+sda  111.8G  SSD
+
+CPU: SHA256-hashing 500 MB
+    2.510 seconds
+CPU: bzip2-compressing 500 MB
+    6.371 seconds
+CPU: AES-encrypting 500 MB
+    1.722 seconds
+
+ioping: seek rate
+    ioping: sequential read speed
+    
+dd: sequential write speed
+    1st run:    170.71 MiB/s
+    2nd run:    168.80 MiB/s
+    3rd run:    169.75 MiB/s
+    average:    169.75 MiB/s
+
+IPv4 speedtests
+    your IPv4:    116.230.86.xxxx
+
+    Cachefly CDN:         0.19 MiB/s
+    Leaseweb (NL):        0.03 MiB/s
+    Softlayer DAL (US):   0.03 MiB/s
+    Online.net (FR):      0.00 MiB/s
+    OVH BHS (CA):         0.05 MiB/s
+
+No IPv6 connectivity detected
+-------------------------------------------------
+
