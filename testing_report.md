@@ -26,7 +26,7 @@ TPS (Transactions Per Second) 即*每秒处理交易数*，是衡量区块链性
 网络带宽：
 - 100Mbit/s，但测试过程中实测只有5Mbit/s
 ## 测试方法
-### [部署节点](#deploy-node)
+### 部署节点
 1. 在运行节点机器上安装好[开发环境](https://github.com/ontio/ontology#build-development-environment)后，从Github上下载ontology源码到$GOPATH/src/github.com/ontio目录下：
    > $ git clone https://github.com/ontio/ontology.git  
    或者  
@@ -99,7 +99,7 @@ TPS (Transactions Per Second) 即*每秒处理交易数*，是衡量区块链性
    dBFT模式下需修改[myDBFT.json配置文件](https://github.com/joeqian10/ont_TPS_testing/blob/master/OntConfig/myDBFT.json)中的"SeedList"和"Bookkeepers"，并将其放到ontology目录下 (即和ontology/main.go处于同一个文件夹)，启动命令为：
    > ./ontology --config myDBFT.json --enable-consensus --rest --gaslimit 20000 --gasprice 0
 
-### [JMeter配置](#jmeter-config)
+### JMeter配置
 1. 在发送交易机器上安装Java Development Kit：
    > yum install openjdk-8-jdk
 2. 下载JMeter：
@@ -115,7 +115,7 @@ TPS (Transactions Per Second) 即*每秒处理交易数*，是衡量区块链性
    或者  
    > ./jmeter -n -t dbft.jmx 
 
-### [构造交易](#gen-txs)
+### 构造交易
 1. 在发送交易机器上安装好[开发环境](https://github.com/ontio/ontology#build-development-environment)后，从Github上下载ontology和ontology-go-sdk源码到$GOPATH/src/github.com/ontio目录下：
    > $ git clone https://github.com/ontio/ontology.git  
    > $ git clone https://github.com/ontio/ontology-go-sdk.git   
@@ -134,7 +134,7 @@ TPS (Transactions Per Second) 即*每秒处理交易数*，是衡量区块链性
    
    会在transfer.txt中包含5000条交易的hash和表示为HexString的序列化后的交易数据
 
-### [多签地址转账](#transfer-from-multi)
+### 多签地址转账
 solo模式下节点账户中已有10亿ONT，dBFT模式下可以使用[多签地址转账工具](https://github.com/joeqian10/ont_TPS_testing/tree/master/TransferFromMultiSignAddressTool)将10亿ONT转到1号节点(.jmx配置文件中的server1)的wallet.dat的ont地址中，具体步骤如下：
 1. 将/TransferFromMultiSignAddressTool/wallets/path1/wallet.dat替换为1号节点的wallet.dat
 2. 将/TransferFromMultiSignAddressTool/wallets/path2/wallet.dat替换为2号节点的wallet.dat
@@ -147,10 +147,10 @@ solo模式下节点账户中已有10亿ONT，dBFT模式下可以使用[多签地
    > ./main
 
 ### 测试步骤
-1. [构造交易](#gen-txs)，这批交易的总数量可根据待测的输入TPS而定(比如，输入TPS为5时，可构造1000笔交易，大约200秒发送完毕；输入TPS为100时，可构造30000笔，大约300秒发送完毕；等等)，每笔转账的数额为1；
-2. [部署节点](#deploy-node)并启动ontology测试网络，dBFT模式下可以使用[多签地址转账](#transfer-from-multi)将10亿ONT转到一个节点账户中；
+1. [构造交易](#构造交易)，这批交易的总数量可根据待测的输入TPS而定(比如，输入TPS为5时，可构造1000笔交易，大约200秒发送完毕；输入TPS为100时，可构造30000笔，大约300秒发送完毕；等等)，每笔转账的数额为1；
+2. [部署节点](#部署节点)并启动ontology测试网络，dBFT模式下可以使用[多签地址转账](#多签地址转账)将10亿ONT转到一个节点账户中；
 3. 查询转账交易的接收账户的*初始余额*(可通过节点的RPC接口发送查询请求)，并记录；
-4. [配置JMeter](#jmeter-config)并将步骤1中的这批交易发送到测试网络上，交易数量较多时可配置多个线程发送；
+4. [配置JMeter](#JMeter配置)并将步骤1中的这批交易发送到测试网络上，交易数量较多时可配置多个线程发送；
 5. 查看节点日志，观察每个块中的落账交易数量，出现第一个非空块时记录时间作为*起始时间*，发送完毕后，连续出现三个以上的空块时，可认为交易已经处理完毕，取最后一个非空块的时间作为落账*结束时间*；
 6. 查询转账交易的接收账户的*结束余额*，并记录；
 7. 在这一输入TPS下的输出TPS = ( *结束余额* - *初始余额* ) / ( *结束时间* - *起始时间* )；
